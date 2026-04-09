@@ -1,16 +1,16 @@
 # 🕵️‍♂️ Fake Review Detection System (MK02)
 
 ## 📖 Overview
-This project is a Machine Learning & NLP-based system designed to detect **fake and genuine reviews**. It uses both **traditional ML techniques** and **transformer-based deep learning models (DistilBERT)** to classify reviews accurately. The goal is to identify misleading reviews and improve trust in online platforms.
+This project is a Machine Learning & NLP-based system designed to detect **fake and genuine reviews**. It follows a progressive modeling approach starting from **traditional ML (TF-IDF + Linear SVC)** to advanced **transformer-based models (DistilBERT and RoBERTa)** for improved accuracy and contextual understanding.
 
 ---
 
 ## 🚀 Features
 - Detects fake vs genuine reviews  
-- NLP preprocessing (cleaning, tokenization, stopword removal)  
-- Machine Learning models implementation  
-- Deep Learning using DistilBERT  
-- Model comparison & pattern analysis  
+- End-to-end NLP pipeline  
+- Uses both traditional ML and deep learning models  
+- Model comparison across different approaches  
+- Pattern analysis of fake reviews  
 
 ---
 
@@ -19,7 +19,7 @@ This project is a Machine Learning & NLP-based system designed to detect **fake 
 - NLP (Natural Language Processing)  
 - Scikit-learn  
 - HuggingFace Transformers  
-- DistilBERT  
+- DistilBERT, RoBERTa  
 - Pandas, NumPy  
 - Matplotlib, Seaborn  
 
@@ -31,41 +31,73 @@ Fake_Review_Detection_MK02/
 ├── Data/ → Dataset files  
 ├── src/ → Source code  
 ├── notebooks/ → Jupyter notebooks (training & analysis)  
-│   ├── FRT(Distilbert).ipynb  
-│   ├── Fake review.ipynb  
-│   ├── pattern_analysis.ipynb  
 ├── requirements.txt → Dependencies  
 ├── README.md → Documentation  
 └── .gitignore  
 
 ---
 
-## ⚙️ Working Process
-1. Data Collection → Reviews labeled as fake/genuine  
-2. Preprocessing → Cleaning, tokenization, stopword removal  
-3. Feature Extraction → TF-IDF & transformer tokenization  
-4. Model Training → ML models + DistilBERT  
-5. Evaluation → Accuracy, Precision, Recall, F1-score  
+## ⚙️ Working Pipeline
+
+### 🔹 1. Data Preprocessing
+- Lowercasing  
+- Removing stopwords  
+- Tokenization  
+- Text cleaning  
 
 ---
 
-## 📊 Models Used
-🔹 Traditional ML: Logistic Regression, Naive Bayes  
-🔹 Deep Learning: DistilBERT (fine-tuned transformer model)  
+### 🔹 2. Feature Extraction (Traditional ML)
+- **TF-IDF Vectorization**
+  - Converts text into numerical features  
+  - Captures word importance  
+
+---
+
+### 🔹 3. Traditional Machine Learning Model
+- **Linear SVC (Support Vector Classifier)**
+  - Trained on TF-IDF features  
+  - Efficient for high-dimensional text data  
+  - Provides strong baseline performance  
+
+---
+
+### 🔹 4. Deep Learning Models
+
+#### ✅ DistilBERT
+- Lightweight transformer model  
+- Faster and efficient version of BERT  
+- Fine-tuned for fake review classification  
+
+#### ✅ RoBERTa
+- Optimized version of BERT  
+- Better training strategy and performance  
+- Captures deeper contextual relationships  
+
+---
+
+## 📊 Model Comparison
+
+| Model                | Technique            | Performance |
+|---------------------|---------------------|------------|
+| TF-IDF + Linear SVC | Traditional ML      | Good baseline |
+| DistilBERT          | Transformer (DL)    | High accuracy |
+| RoBERTa             | Advanced Transformer| Best performance |
 
 ---
 
 ## 📈 Results
-- DistilBERT performs better than traditional ML models  
-- Captures contextual meaning effectively  
-- Higher accuracy in fake review detection  
+- Traditional ML (TF-IDF + SVC) provides a solid baseline  
+- DistilBERT improves contextual understanding  
+- RoBERTa achieves the best performance among all models  
 
 ---
 
 ## 🧪 Notebooks
+- TF-IDF + Linear SVC implementation  
 - DistilBERT training notebook  
-- Pattern analysis notebook  
-- Model comparison notebook  
+- RoBERTa experimentation  
+- Pattern analysis  
 
 ---
 
